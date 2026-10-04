@@ -1,0 +1,33 @@
+/* app/globals.css */
+@import "tailwindcss";
+
+@layer base {
+  body {
+    background-color: var(--color-zinc-50);
+    color: var(--color-zinc-900);
+    transition-property: color, background-color, border-color;
+    transition-duration: 200ms;
+    font-family: var(--font-sans, system-ui, sans-serif);
+    min-height: 100vh;
+  }
+
+  /* Modul Întunecat (când clasa .dark este pe <html> sau <body>) */
+  .dark body {
+    background-color: var(--color-zinc-950);
+    color: var(--color-zinc-100);
+  }
+
+  /* Stiluri globale de text */
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--color-zinc-900);
+  }
+
+  .dark h1,
+  .dark h2,
+  .dark h3,
+  .dark h4,
+  .dark h5,
+  .dark h6 {
+    color: var(--color-white);
+  }
+}
