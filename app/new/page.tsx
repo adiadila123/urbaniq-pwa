@@ -27,7 +27,7 @@ export default function NewReportPage() {
   const [title, setTitle] = useState('');
   const [description, setDescription] = useState('');
   const [category, setCategory] = useState(CATEGORII[0]);
-  const [county, setCounty] = useState('Cluj');
+  const [county, setCounty] = useState('Argeș'); // Default Argeș
   const [locality, setLocality] = useState('');
 
   // Stare pentru fotografia capturată
