@@ -17,7 +17,7 @@ const JUDETE = [
 
 export default function GhidCivicPage() {
   const [query, setQuery] = useState('');
-  const [selectedCounty, setSelectedCounty] = useState('Cluj');
+  const [selectedCounty, setSelectedCounty] = useState('Argeș'); // Default Argeș
   const [locality, setLocality] = useState('');
   const [loading, setLoading] = useState(false);
   const [cleanResponse, setCleanResponse] = useState<string | null>(null);
