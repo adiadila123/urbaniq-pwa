@@ -10,7 +10,7 @@ const MapView = dynamic(() => import('@/components/MapView'), {
   ssr: false,
   loading: () => (
     <div className="w-full h-64 rounded-2xl bg-zinc-900 border border-zinc-800 flex items-center justify-center text-xs text-zinc-500">
-      Se încarcă harta...
+      Se încarcă harta din Argeș...
     </div>
   ),
 });
@@ -27,10 +27,12 @@ interface ReportItem {
   upvotesCount: number;
 }
 
+// Date de test din județul Argeș (Pitești, Mioveni, Câmpulung)
 const MOCK_REPORTS: ReportItem[] = [
-  { id: '1', title: 'Groapă pe carosabil', category: 'Infrastructură', county: 'Cluj', locality: 'Florești', lat: 46.741, lng: 23.483, status: 'pending', upvotesCount: 14 },
-  { id: '2', title: 'Iluminat public stins', category: 'Utilități', county: 'București', locality: 'Sector 1', lat: 44.432, lng: 26.106, status: 'in_progress', upvotesCount: 28 },
-  { id: '3', title: 'Gunoaie neridicate', category: 'Salubritate', county: 'Iași', locality: 'Iași', lat: 47.158, lng: 27.601, status: 'resolved', upvotesCount: 42 },
+  { id: '1', title: 'Groapă pe Bulevardul Republicii', category: 'Infrastructură', county: 'Argeș', locality: 'Pitești', lat: 44.8565, lng: 24.8692, status: 'pending', upvotesCount: 18 },
+  { id: '2', title: 'Iluminat public stins în Parcul Trivale', category: 'Utilități', county: 'Argeș', locality: 'Pitești', lat: 44.8610, lng: 24.8520, status: 'in_progress', upvotesCount: 34 },
+  { id: '3', title: 'Depozitare deșeuri zonă rezidențială', category: 'Salubritate', county: 'Argeș', locality: 'Mioveni', lat: 44.9531, lng: 24.9360, status: 'resolved', upvotesCount: 52 },
+  { id: '4', title: 'Semnalizator rutier avariat', category: 'Infrastructură', county: 'Argeș', locality: 'Câmpulung', lat: 45.2680, lng: 25.0450, status: 'pending', upvotesCount: 12 },
 ];
 
 export default function CommunityMapPage() {
@@ -57,7 +59,7 @@ export default function CommunityMapPage() {
       <header className="space-y-1">
         <h1 className="text-xl font-bold text-white flex items-center gap-2">
           <MapPin className="w-5 h-5 text-blue-500" />
-          Harta Comunității
+          Harta Comunității — Argeș
         </h1>
         <p className="text-xs text-zinc-400">Apasă pe o sesizare pentru a o localiza pe hartă.</p>
       </header>
@@ -101,7 +103,7 @@ export default function CommunityMapPage() {
               </span>
               <button
                 onClick={(e) => handleVote(e, item.id)}
-                className="px-3 py-1.5 bg-blue-600/10 hover:bg-blue-600/20 border border-blue-500/30 text-blue-400 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition active:scale-95"
+                className="px-3 py-1.5 bg-blue-600/10 hover:bg-blue-600/20 border border-blue-500/30 text-blue-400 rounded-xl text-xs font-semibold flex items-center gap-1.5 transition active:scale-95 cursor-pointer"
               >
                 <ThumbsUp className="w-3.5 h-3.5" />
                 Susține +1
